@@ -1,104 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
 
-*{
-    margin : 0;
-    padding: 0;
-    box-sizing: border-box;
+html {
+  font-size: 62.5%; /*10px*/
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'open Sans', sans-serif;
-    color : white;
-    background-color: black;
+body {
+  height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  font-family: "open Sans", sans-serif;
+  font-weight: 400;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: hsl(257, 40%, 49%);
+  background-image: url("images/bg-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.huddle{
-    height: 40px;
-    margin: 40px 10px;
+.logo-container .logo {
+  margin-top: 2rem;
+  width: 20rem;
 }
 
-h2{
-    font-size: 40px;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 20px;
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+}
+.cards .illustration .illustration__img {
+  max-width: 100%;
+}
+.features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+  flex: 1;
+}
+.features h2 {
+  font-family: "poppins", "open Sans", "sans-serif";
+  font-size: clamp(3rem, 8vw, 4rem);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.features p {
+  font-size: clamp(1.5rem, 8vw, 1.8rem);
+  line-height: 3rem;
+}
+.features button {
+  cursor: pointer;
+  width: 18rem;
+  padding: 1.8rem;
+
+  color: hsl(257, 40%, 49%);
+  font-size: 1.8rem;
+
+  border-radius: 5rem;
+  border: none;
+  outline: none;
+}
+.features button:hover {
+  background-color: hsl(300, 85%, 59%);
+  color: white;
 }
 
-p{
-    line-height: 1.6;
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.links {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.link {
+  padding: 1rem;
+  border: 2px solid white;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+.link:hover {
+  border-color: hsl(300, 85%, 59%);
+  color: hsl(300, 85%, 59%);
 }
 
-button{
-    /* border: black solid 1px; */
-    border: none;
-    box-shadow: 2px 3px rgba(0, 0, 0, 0.294);
-    border-radius: 50px;
-    font-size: 16px;
-    color :hsl(257, 40%, 49%);
-    background-color: white;
+@media only screen and (max-width: 1140px) {
+  header {
+    margin-bottom: 5rem;
+  }
+  .cards {
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+  .features {
+    text-align: center;
+  }
 
-    margin-top: 20px;
-    padding: 10px 50px;
-
-    cursor: pointer;
-}
-
-button:hover{
-    color:white;
-    background-color: pink;
-}
-
-main{
-    width: 1440px;
-    
-    background-image: url('images/bg-desktop.svg');
-    background-color: hsl(257, 40%, 49%);
+  body {
+    background-image: url("./images/bg-mobile.svg");
     background-repeat: no-repeat;
+    /* background-position: top; */
+    background-position-y: -32rem;
+    background-position-x: -15rem;
     background-size: contain;
-}
-
-section {
-    
-    display: flex;
-    justify-content: center;
-    gap : 40px;
-
-    margin-right: 180px;
-}
-
-.illustration{
-    width: 500px; 
-}
-
-.features{
-    width: 500px;
-}
-
-.logos{
-    display: flex;
-    justify-content: flex-end;
-    gap : 15px;
-    
-    margin : 20px 80px;
-}
-.logo{
-    border : white solid 1px;
-    padding: 10px;
-    border-radius: 50px;
-
-    cursor: pointer;
-}
-
-.logo:hover{
-    color: pink;
-    border-color: pink;
-
-}
-
-.attribution{
-    background-color: black;
+  }
+  .features button {
+    margin: 0 auto;
+    width: 50%;
+  }
 }
